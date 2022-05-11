@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'une PFE{% endblock %}
+{% block body %}
+    <div class="row">
+    {% for entreprise in PFEparEntreprise %}
+        <div class="card text-white bg-{%if(loop.index is odd)%}primary{% else %}success{% endif %} m-2 col-3" style="max-width: 18rem;">
+        <div class="card-header">{{ entreprise ['Name'] }}</div>
+            <div class="card-body">
+                            <h5 class="card-title">{{ entreprise[1] }} Pfe(s)</h5>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
